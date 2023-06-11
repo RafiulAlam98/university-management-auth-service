@@ -1,6 +1,9 @@
+/* eslint-disable no-unused-expressions */
+/* eslint-disable no-console */
 import { ErrorRequestHandler } from 'express'
 import config from '../../config'
 import { IGenericErrorMessage } from '../../interfaces/error'
+import { errorlogger } from '../../shared/logger'
 import ApiError from '../errors/ApiError'
 import { handleValidationError } from '../errors/handleValidationError'
 
@@ -13,6 +16,10 @@ export const globalErrorHandler: ErrorRequestHandler = (
   let statusCode = 500
   let message = 'Something went wrong !'
   let errorMessages: IGenericErrorMessage[] = []
+
+  config.env === 'development'
+    ? console.log('globalhandler12345', err)
+    : errorlogger.error('globalHandler', err)
 
   if (err?.name === 'ValidationError') {
     const simplifiedError = handleValidationError(err)

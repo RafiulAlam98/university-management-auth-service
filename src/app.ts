@@ -17,7 +17,7 @@ app.use('/api/v1/users/', UserRoutes.router)
 
 // Testing
 // app.get('/', (req: Request, res: Response, next: NextFunction) => {
-//   throw new ApiError(404, 'Not Found', '')
+//   throw new ApiError(404, ' Found', '')
 //   // next()
 // })
 
