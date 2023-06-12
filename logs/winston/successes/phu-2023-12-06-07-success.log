@@ -61,3 +61,10 @@
   label: 'HI',
   timestamp: '2023-06-12T01:34:33.728Z'
 }
+{
+  message: 'listening on port 5000',
+  level: 'info',
+  service: 'user-service',
+  label: 'HI',
+  timestamp: '2023-06-12T01:34:50.644Z'
+}
