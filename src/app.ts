@@ -18,7 +18,7 @@ app.use('/api/v1/users/', UserRoutes.router)
 // Testing
 // app.get('/', (req: Request, res: Response, next: NextFunction) => {
 //   throw new ApiError(100, 'hi', '')
-//   // next()
+//   //   next()
 // })
 
 app.use(globalErrorHandler)

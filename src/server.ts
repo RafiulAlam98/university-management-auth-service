@@ -14,24 +14,24 @@ process.on('uncaughtException', err => {
 async function main() {
   try {
     await mongoose.connect(config.database_url as string)
-    // logger.info('database connected')
+    logger.info('database connected')
     app.listen(config.port, () => {
       logger.info(`listening on port ${config.port}`)
     })
   } catch (err) {
     errorlogger.error('Failed to conncet', err)
   }
-  process.on('unhandledRejection', error => {
-    errorlogger.error('Unhandled rejection, We are closing our server')
-    if (server) {
-      server.close(() => {
-        errorlogger.error(error)
-        process.exit(1)
-      })
-    } else {
-      process.exit(1)
-    }
-  })
+  // process.on('unhandledRejection', error => {
+  //   errorlogger.error('Unhandled rejection, We are closing our server')
+  //   if (server) {
+  //     server.close(() => {
+  //       errorlogger.error(error)
+  //       process.exit(1)
+  //     })
+  //   } else {
+  //     process.exit(1)
+  //   }
+  // })
 }
 
 main()

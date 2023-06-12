@@ -1,70 +1,75 @@
 {
-  "keep": {
-    "days": true,
-    "amount": 14
-  },
-  "auditLog": "D:\\projects\\phero-2.0\\university-management\\logs\\winston\\successes\\.9e8148be6df5b226a1391be718b03c12655c8d5a-audit.json",
-  "files": [
-    {
-      "date": 1686009173287,
-      "name": "D:\\projects\\phero-2.0\\university-management\\logs\\winston\\successes\\phu-2023-06-06-05-success.log",
-      "hash": "ddd110d334499f6fbfb56d67909c98340233990248e357502ae5eb6fd9948c94"
+    "keep": {
+        "days": true,
+        "amount": 14
     },
-    {
-      "date": 1686011093076,
-      "name": "D:\\projects\\phero-2.0\\university-management\\logs\\winston\\successes\\phu-2023-06-06-06-success.log",
-      "hash": "5520e9043fb477021933ed3089021b5a6a80f551d8f1f66a32deafae9fb996f8"
-    },
-    {
-      "date": 1686014406637,
-      "name": "D:\\projects\\phero-2.0\\university-management\\logs\\winston\\successes\\phu-2023-06-06-07-success.log",
-      "hash": "2774d7ca49f19bb56195365bc77521d6771854c1e0206c7982da5b8541c08f26"
-    },
-    {
-      "date": 1686052979704,
-      "name": "D:\\projects\\phero-2.0\\university-management\\logs\\winston\\successes\\phu-2023-06-06-18-success.log",
-      "hash": "ceca706a732886986842954a0005a31ad11604764bc46fe88a0f268460909dd3"
-    },
-    {
-      "date": 1686277079626,
-      "name": "D:\\projects\\phero-2.0\\university-management\\logs\\winston\\successes\\phu-2023-09-06-08-success.log",
-      "hash": "fc0ccc18d9351ecb5f37e81da6636baa3ab78603b2145a2d68da60e19ab38abf"
-    },
-    {
-      "date": 1686329885778,
-      "name": "D:\\projects\\phero-2.0\\university-management\\logs\\winston\\successes\\phu-2023-09-06-22-success.log",
-      "hash": "92dabc71164ddb7c5cbf09fa2a92a016a1c580fbe4b15db06f8279d0aaa1b34d"
-    },
-    {
-      "date": 1686330444960,
-      "name": "D:\\projects\\phero-2.0\\university-management\\logs\\winston\\successes\\phu-2023-09-06-23-success.log",
-      "hash": "32f5e2346a6bb92f8894f54f980011e91cc8e982c907caec24a69733ef27a265"
-    },
-    {
-      "date": 1686362855228,
-      "name": "D:\\projects\\phero-2.0\\university-management\\logs\\winston\\successes\\phu-2023-10-06-08-success.log",
-      "hash": "11ea4c21d93db74612e92b44a37fc0eaa39d574772db6fc104ac89e79ce1d35d"
-    },
-    {
-      "date": 1686366092924,
-      "name": "D:\\projects\\phero-2.0\\university-management\\logs\\winston\\successes\\phu-2023-10-06-09-success.log",
-      "hash": "ad301dc68164aaf5fb9c2ee3898047fbffeb46faceeabb3343520ba96acb665f"
-    },
-    {
-      "date": 1686491769943,
-      "name": "D:\\projects\\phero-2.0\\university-management\\logs\\winston\\successes\\phu-2023-11-06-19-success.log",
-      "hash": "7002b2193107dd9d3da2aefa7b807db601c248fbaad916f003b78e2f64b3de89"
-    },
-    {
-      "date": 1686492294233,
-      "name": "D:\\projects\\phero-2.0\\university-management\\logs\\winston\\successes\\phu-2023-11-06-20-success.log",
-      "hash": "af8303876ed035e1b8e5a9837348580bcd9ffeda931b33b35f93fcef35356839"
-    },
-    {
-      "date": 1686533340747,
-      "name": "D:\\projects\\phero-2.0\\university-management\\logs\\winston\\successes\\phu-2023-12-06-07-success.log",
-      "hash": "964c47c7b54c28c545bb165c402230af1195e8df1bb23b474286cfbf9702721f"
-    }
-  ],
-  "hashType": "sha256"
+    "auditLog": "D:\\projects\\phero-2.0\\university-management\\logs\\winston\\successes\\.9e8148be6df5b226a1391be718b03c12655c8d5a-audit.json",
+    "files": [
+        {
+            "date": 1686009173287,
+            "name": "D:\\projects\\phero-2.0\\university-management\\logs\\winston\\successes\\phu-2023-06-06-05-success.log",
+            "hash": "ddd110d334499f6fbfb56d67909c98340233990248e357502ae5eb6fd9948c94"
+        },
+        {
+            "date": 1686011093076,
+            "name": "D:\\projects\\phero-2.0\\university-management\\logs\\winston\\successes\\phu-2023-06-06-06-success.log",
+            "hash": "5520e9043fb477021933ed3089021b5a6a80f551d8f1f66a32deafae9fb996f8"
+        },
+        {
+            "date": 1686014406637,
+            "name": "D:\\projects\\phero-2.0\\university-management\\logs\\winston\\successes\\phu-2023-06-06-07-success.log",
+            "hash": "2774d7ca49f19bb56195365bc77521d6771854c1e0206c7982da5b8541c08f26"
+        },
+        {
+            "date": 1686052979704,
+            "name": "D:\\projects\\phero-2.0\\university-management\\logs\\winston\\successes\\phu-2023-06-06-18-success.log",
+            "hash": "ceca706a732886986842954a0005a31ad11604764bc46fe88a0f268460909dd3"
+        },
+        {
+            "date": 1686277079626,
+            "name": "D:\\projects\\phero-2.0\\university-management\\logs\\winston\\successes\\phu-2023-09-06-08-success.log",
+            "hash": "fc0ccc18d9351ecb5f37e81da6636baa3ab78603b2145a2d68da60e19ab38abf"
+        },
+        {
+            "date": 1686329885778,
+            "name": "D:\\projects\\phero-2.0\\university-management\\logs\\winston\\successes\\phu-2023-09-06-22-success.log",
+            "hash": "92dabc71164ddb7c5cbf09fa2a92a016a1c580fbe4b15db06f8279d0aaa1b34d"
+        },
+        {
+            "date": 1686330444960,
+            "name": "D:\\projects\\phero-2.0\\university-management\\logs\\winston\\successes\\phu-2023-09-06-23-success.log",
+            "hash": "32f5e2346a6bb92f8894f54f980011e91cc8e982c907caec24a69733ef27a265"
+        },
+        {
+            "date": 1686362855228,
+            "name": "D:\\projects\\phero-2.0\\university-management\\logs\\winston\\successes\\phu-2023-10-06-08-success.log",
+            "hash": "11ea4c21d93db74612e92b44a37fc0eaa39d574772db6fc104ac89e79ce1d35d"
+        },
+        {
+            "date": 1686366092924,
+            "name": "D:\\projects\\phero-2.0\\university-management\\logs\\winston\\successes\\phu-2023-10-06-09-success.log",
+            "hash": "ad301dc68164aaf5fb9c2ee3898047fbffeb46faceeabb3343520ba96acb665f"
+        },
+        {
+            "date": 1686491769943,
+            "name": "D:\\projects\\phero-2.0\\university-management\\logs\\winston\\successes\\phu-2023-11-06-19-success.log",
+            "hash": "7002b2193107dd9d3da2aefa7b807db601c248fbaad916f003b78e2f64b3de89"
+        },
+        {
+            "date": 1686492294233,
+            "name": "D:\\projects\\phero-2.0\\university-management\\logs\\winston\\successes\\phu-2023-11-06-20-success.log",
+            "hash": "af8303876ed035e1b8e5a9837348580bcd9ffeda931b33b35f93fcef35356839"
+        },
+        {
+            "date": 1686533340747,
+            "name": "D:\\projects\\phero-2.0\\university-management\\logs\\winston\\successes\\phu-2023-12-06-07-success.log",
+            "hash": "964c47c7b54c28c545bb165c402230af1195e8df1bb23b474286cfbf9702721f"
+        },
+        {
+            "date": 1686536010391,
+            "name": "D:\\projects\\phero-2.0\\university-management\\logs\\winston\\successes\\phu-2023-12-06-08-success.log",
+            "hash": "1321f6a43381420cc5b5640360289257e9c3f0745a9d1e92cb65c0fd5cb09aac"
+        }
+    ],
+    "hashType": "sha256"
 }
