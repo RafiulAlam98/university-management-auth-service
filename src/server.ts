@@ -21,17 +21,17 @@ async function main() {
   } catch (err) {
     errorlogger.error('Failed to conncet', err)
   }
-  // process.on('unhandledRejection', error => {
-  //   errorlogger.error('Unhandled rejection, We are closing our server')
-  //   if (server) {
-  //     server.close(() => {
-  //       errorlogger.error(error)
-  //       process.exit(1)
-  //     })
-  //   } else {
-  //     process.exit(1)
-  //   }
-  // })
+  process.on('unhandledRejection', error => {
+    errorlogger.error('Unhandled rejection, We are closing our server')
+    if (server) {
+      server.close(() => {
+        errorlogger.error(error)
+        process.exit(1)
+      })
+    } else {
+      process.exit(1)
+    }
+  })
 }
 
 main()

@@ -11,7 +11,7 @@ const createUser: RequestHandler = async (req, res, next) => {
       data: result,
     })
   } catch (error) {
-    next()
+    next(error)
   }
 }
 export const UserController = {

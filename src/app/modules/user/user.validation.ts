@@ -13,7 +13,7 @@ const ValidateRequest =
       })
       return next()
     } catch (error) {
-      next()
+      next(error)
     }
   }
 
