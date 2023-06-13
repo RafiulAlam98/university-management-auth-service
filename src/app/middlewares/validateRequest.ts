@@ -1,10 +1,22 @@
-import { z } from 'zod'
+import { NextFunction, Request, Response } from 'express'
+import { AnyZodObject } from 'zod'
 
-export const createZodUserSchema = z.object({
-  body: z.object({
-    role: z.string({
-      required_error: 'role is required',
-    }),
-    password: z.string().optional(),
-  }),
-})
+const ValidateRequest =
+  (schema: AnyZodObject) =>
+  async (req: Request, res: Response, next: NextFunction): Promise<void> => {
+    try {
+      await schema.parseAsync({
+        body: req.body,
+        query: req.query,
+        params: req.params,
+        cookies: req.cookies,
+      })
+      return next()
+    } catch (error) {
+      next(error)
+    }
+  }
+
+export const RequestValidation = {
+  ValidateRequest,
+}
