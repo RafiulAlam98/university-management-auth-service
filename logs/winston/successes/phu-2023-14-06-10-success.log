@@ -3,96 +3,96 @@
   level: 'info',
   service: 'user-service',
   label: 'HI',
-  timestamp: '2023-06-14T03:00:46.933Z'
+  timestamp: '2023-06-14T04:05:45.728Z'
 }
 {
   message: 'listening on port 5000',
   level: 'info',
   service: 'user-service',
   label: 'HI',
-  timestamp: '2023-06-14T03:00:46.940Z'
+  timestamp: '2023-06-14T04:05:45.734Z'
 }
 {
   message: 'database connected',
   level: 'info',
   service: 'user-service',
   label: 'HI',
-  timestamp: '2023-06-14T03:06:08.254Z'
+  timestamp: '2023-06-14T04:06:49.837Z'
 }
 {
   message: 'listening on port 5000',
   level: 'info',
   service: 'user-service',
   label: 'HI',
-  timestamp: '2023-06-14T03:06:08.260Z'
+  timestamp: '2023-06-14T04:06:49.843Z'
 }
 {
   message: 'database connected',
   level: 'info',
   service: 'user-service',
   label: 'HI',
-  timestamp: '2023-06-14T03:14:23.454Z'
+  timestamp: '2023-06-14T04:08:05.241Z'
 }
 {
   message: 'listening on port 5000',
   level: 'info',
   service: 'user-service',
   label: 'HI',
-  timestamp: '2023-06-14T03:14:23.460Z'
+  timestamp: '2023-06-14T04:08:05.247Z'
 }
 {
   message: 'database connected',
   level: 'info',
   service: 'user-service',
   label: 'HI',
-  timestamp: '2023-06-14T03:16:21.661Z'
+  timestamp: '2023-06-14T04:08:27.762Z'
 }
 {
   message: 'listening on port 5000',
   level: 'info',
   service: 'user-service',
   label: 'HI',
-  timestamp: '2023-06-14T03:16:21.669Z'
+  timestamp: '2023-06-14T04:08:27.769Z'
 }
 {
   message: 'database connected',
   level: 'info',
   service: 'user-service',
   label: 'HI',
-  timestamp: '2023-06-14T03:16:59.177Z'
+  timestamp: '2023-06-14T04:09:20.278Z'
 }
 {
   message: 'listening on port 5000',
   level: 'info',
   service: 'user-service',
   label: 'HI',
-  timestamp: '2023-06-14T03:16:59.184Z'
+  timestamp: '2023-06-14T04:09:20.284Z'
 }
 {
   message: 'database connected',
   level: 'info',
   service: 'user-service',
   label: 'HI',
-  timestamp: '2023-06-14T03:29:02.110Z'
+  timestamp: '2023-06-14T04:09:50.951Z'
 }
 {
   message: 'listening on port 5000',
   level: 'info',
   service: 'user-service',
   label: 'HI',
-  timestamp: '2023-06-14T03:29:02.116Z'
+  timestamp: '2023-06-14T04:09:50.957Z'
 }
 {
   message: 'database connected',
   level: 'info',
   service: 'user-service',
   label: 'HI',
-  timestamp: '2023-06-14T03:35:40.308Z'
+  timestamp: '2023-06-14T04:29:51.574Z'
 }
 {
   message: 'listening on port 5000',
   level: 'info',
   service: 'user-service',
   label: 'HI',
-  timestamp: '2023-06-14T03:35:40.313Z'
+  timestamp: '2023-06-14T04:29:51.580Z'
 }
