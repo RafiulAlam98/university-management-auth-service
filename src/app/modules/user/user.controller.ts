@@ -7,13 +7,14 @@ import { UserService } from './user.service'
 const createUser: RequestHandler = catchAsync(async (req, res, next) => {
   const { user } = req.body
   const result = await UserService.createUser(user)
-  next()
+
   sendResponse(res, {
     statusCode: httpStatus.OK,
     success: true,
     message: 'Academic Semester is created successfully!',
     data: result,
   })
+  next()
 })
 export const UserController = {
   createUser,
