@@ -54,3 +54,17 @@
   label: 'HI',
   timestamp: '2023-06-14T03:16:21.669Z'
 }
+{
+  message: 'database connected',
+  level: 'info',
+  service: 'user-service',
+  label: 'HI',
+  timestamp: '2023-06-14T03:16:59.177Z'
+}
+{
+  message: 'listening on port 5000',
+  level: 'info',
+  service: 'user-service',
+  label: 'HI',
+  timestamp: '2023-06-14T03:16:59.184Z'
+}
