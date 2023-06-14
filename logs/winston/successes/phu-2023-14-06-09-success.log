@@ -12,3 +12,45 @@
   label: 'HI',
   timestamp: '2023-06-14T03:00:46.940Z'
 }
+{
+  message: 'database connected',
+  level: 'info',
+  service: 'user-service',
+  label: 'HI',
+  timestamp: '2023-06-14T03:06:08.254Z'
+}
+{
+  message: 'listening on port 5000',
+  level: 'info',
+  service: 'user-service',
+  label: 'HI',
+  timestamp: '2023-06-14T03:06:08.260Z'
+}
+{
+  message: 'database connected',
+  level: 'info',
+  service: 'user-service',
+  label: 'HI',
+  timestamp: '2023-06-14T03:14:23.454Z'
+}
+{
+  message: 'listening on port 5000',
+  level: 'info',
+  service: 'user-service',
+  label: 'HI',
+  timestamp: '2023-06-14T03:14:23.460Z'
+}
+{
+  message: 'database connected',
+  level: 'info',
+  service: 'user-service',
+  label: 'HI',
+  timestamp: '2023-06-14T03:16:21.661Z'
+}
+{
+  message: 'listening on port 5000',
+  level: 'info',
+  service: 'user-service',
+  label: 'HI',
+  timestamp: '2023-06-14T03:16:21.669Z'
+}
