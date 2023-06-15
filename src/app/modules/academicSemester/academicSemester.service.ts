@@ -14,7 +14,8 @@ import {
 } from './academicSemester.interface'
 import { AcademicSemeter } from './academicSemester.model'
 
-const createSemester = async (
+//create semester
+const createSemesterService = async (
   payload: IAcademicSemeter
 ): Promise<IAcademicSemeter> => {
   if (academiceSemesterTitleCodeMapper[payload.title] !== payload.code) {
@@ -24,7 +25,8 @@ const createSemester = async (
   return result
 }
 
-const getAllSemesters = async (
+//get all semesters
+const getAllSemestersService = async (
   paginationOptions: IPaginationOptions,
   filters: IAcademicSemesterFilter
 ): Promise<IGenericResponse<IAcademicSemeter[]>> => {
@@ -102,7 +104,13 @@ const getAllSemesters = async (
   }
 }
 
+const getSingleSemesterService = async (id: string) => {
+  const result = await AcademicSemeter.findById(id)
+  return result
+}
+
 export const AcademicSemesterService = {
-  createSemester,
-  getAllSemesters,
+  createSemesterService,
+  getAllSemestersService,
+  getSingleSemesterService,
 }

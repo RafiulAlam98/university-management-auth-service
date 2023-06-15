@@ -11,7 +11,7 @@ import { academicSemesterFilterableField } from './academicSemester.constant'
 const createSemester: RequestHandler = catchAsync(
   async (req: Request, res: Response, next: NextFunction) => {
     const { ...academicSemesterData } = req.body
-    const result = await AcademicSemesterService.createSemester(
+    const result = await AcademicSemesterService.createSemesterService(
       academicSemesterData
     )
 
@@ -29,8 +29,8 @@ const getAllSemesters = catchAsync(
   async (req: Request, res: Response, next: NextFunction) => {
     const filters = pick(req.query, academicSemesterFilterableField)
     const paginationOptions = pick(req.query, paginationField)
-    // console.log(paginationOptions)
-    const result = await AcademicSemesterService.getAllSemesters(
+
+    const result = await AcademicSemesterService.getAllSemestersService(
       paginationOptions,
       filters
     )
@@ -43,7 +43,23 @@ const getAllSemesters = catchAsync(
     next()
   }
 )
+
+const getSingleSemester = catchAsync(
+  async (req: Request, res: Response, next: NextFunction) => {
+    const id = req.params.id
+    const result = await AcademicSemesterService.getSingleSemesterService(id)
+    sendResponse(res, {
+      statusCode: httpStatus.OK,
+      success: true,
+      message: 'Academic Semester retrieved successfully!',
+      data: result,
+    })
+    next()
+  }
+)
+
 export const AcademicSemesterController = {
   createSemester,
   getAllSemesters,
+  getSingleSemester,
 }
