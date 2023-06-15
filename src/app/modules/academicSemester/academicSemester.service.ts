@@ -110,7 +110,7 @@ const getSingleSemesterService = async (id: string) => {
   return result
 }
 
-// get update semester
+//  update semester
 const updateSingleSemesterService = async (
   id: string,
   payload: IAcademicSemester
@@ -124,9 +124,18 @@ const updateSingleSemesterService = async (
   return result
 }
 
+// delete semester
+const deleteSingleSemesterService = async (
+  id: string
+): Promise<IAcademicSemester | null> => {
+  const result = await AcademicSemeter.findByIdAndDelete(id)
+  return result
+}
+
 export const AcademicSemesterService = {
   createSemesterService,
   getAllSemestersService,
   getSingleSemesterService,
   updateSingleSemesterService,
+  deleteSingleSemesterService,
 }
