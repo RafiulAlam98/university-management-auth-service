@@ -9,15 +9,15 @@ import {
   academiceSemesterTitleCodeMapper,
 } from './academicSemester.constant'
 import {
+  IAcademicSemester,
   IAcademicSemesterFilter,
-  IAcademicSemeter,
 } from './academicSemester.interface'
 import { AcademicSemeter } from './academicSemester.model'
 
 //create semester
 const createSemesterService = async (
-  payload: IAcademicSemeter
-): Promise<IAcademicSemeter> => {
+  payload: IAcademicSemester
+): Promise<IAcademicSemester> => {
   if (academiceSemesterTitleCodeMapper[payload.title] !== payload.code) {
     throw new ApiError(httpStatus.BAD_REQUEST, 'Invalid Semester Code')
   }
@@ -29,7 +29,7 @@ const createSemesterService = async (
 const getAllSemestersService = async (
   paginationOptions: IPaginationOptions,
   filters: IAcademicSemesterFilter
-): Promise<IGenericResponse<IAcademicSemeter[]>> => {
+): Promise<IGenericResponse<IAcademicSemester[]>> => {
   const andConditions = []
   const { searchTerm, ...filtersData } = filters
 
@@ -104,8 +104,20 @@ const getAllSemestersService = async (
   }
 }
 
+// get single semester
 const getSingleSemesterService = async (id: string) => {
   const result = await AcademicSemeter.findById(id)
+  return result
+}
+
+// get update semester
+const updateSingleSemesterService = async (
+  id: string,
+  payload: IAcademicSemester
+) => {
+  const result = await AcademicSemeter.findOneAndUpdate({ _id: id }, payload, {
+    new: true,
+  })
   return result
 }
 
@@ -113,4 +125,5 @@ export const AcademicSemesterService = {
   createSemesterService,
   getAllSemestersService,
   getSingleSemesterService,
+  updateSingleSemesterService,
 }

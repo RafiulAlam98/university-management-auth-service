@@ -8,10 +8,10 @@ import {
 } from './academicSemester.constant'
 import {
   AcademicSemesterModel,
-  IAcademicSemeter,
+  IAcademicSemester,
 } from './academicSemester.interface'
 
-const academicSemesterSchema = new Schema<IAcademicSemeter>(
+const academicSemesterSchema = new Schema<IAcademicSemester>(
   {
     title: {
       type: String,
@@ -58,7 +58,7 @@ academicSemesterSchema.pre('save', async function (next) {
   next()
 })
 
-export const AcademicSemeter = model<IAcademicSemeter, AcademicSemesterModel>(
+export const AcademicSemeter = model<IAcademicSemester, AcademicSemesterModel>(
   'AcademicSemester',
   academicSemesterSchema
 )
