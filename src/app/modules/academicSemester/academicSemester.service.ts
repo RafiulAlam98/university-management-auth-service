@@ -114,7 +114,10 @@ const getSingleSemesterService = async (id: string) => {
 const updateSingleSemesterService = async (
   id: string,
   payload: IAcademicSemester
-) => {
+): Promise<IAcademicSemester | null> => {
+  if (academiceSemesterTitleCodeMapper[payload.title] !== payload.code) {
+    throw new ApiError(httpStatus.BAD_REQUEST, 'Invalid Semester Code')
+  }
   const result = await AcademicSemeter.findOneAndUpdate({ _id: id }, payload, {
     new: true,
   })
