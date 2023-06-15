@@ -6,6 +6,7 @@ import config from '../../config'
 import { IGenericErrorMessage } from '../../interfaces/error'
 import { errorlogger } from '../../shared/logger'
 import ApiError from '../errors/ApiError'
+import handleCastError from '../errors/handleCastError'
 import { handleValidationError } from '../errors/handleValidationError'
 import { handleZodError } from '../errors/handleZodError'
 
@@ -43,6 +44,11 @@ export const globalErrorHandler: ErrorRequestHandler = (
           },
         ]
       : []
+  } else if (err.name === 'CastError') {
+    const simplifiedError = handleCastError(err)
+    statusCode = simplifiedError.statusCode
+    message = simplifiedError.message
+    errorMessages = simplifiedError.errorMessages
   } else if (err instanceof ApiError) {
     statusCode = err?.statusCode
     message = err?.message
