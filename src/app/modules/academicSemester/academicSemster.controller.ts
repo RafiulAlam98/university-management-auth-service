@@ -6,6 +6,7 @@ import { AcademicSemesterService } from './academicSemester.service'
 
 import { paginationField } from '../../../constants/paginationField'
 import pick from '../../../shared/pick'
+import { academicSemesterFilterableField } from './academicSemester.constant'
 
 const createSemester: RequestHandler = catchAsync(
   async (req: Request, res: Response, next: NextFunction) => {
@@ -26,22 +27,17 @@ const createSemester: RequestHandler = catchAsync(
 
 const getAllSemesters = catchAsync(
   async (req: Request, res: Response, next: NextFunction) => {
-    // const paginationOptions = {
-    //   page: Number(req.query.page),
-    //   limit: Number(req.query.limit),
-    //   sortBy: req.query.sortBy,
-    //   sortOrder: req.query.sortOrder,
-    // }
-
+    const filters = pick(req.query, academicSemesterFilterableField)
     const paginationOptions = pick(req.query, paginationField)
-    console.log(paginationOptions)
+    // console.log(paginationOptions)
     const result = await AcademicSemesterService.getAllSemesters(
-      paginationOptions
+      paginationOptions,
+      filters
     )
     sendResponse(res, {
       statusCode: httpStatus.OK,
       success: true,
-      message: 'Academic Semester is created successfully!',
+      message: 'Academic Semester retrieved successfully!',
       data: result,
     })
     next()

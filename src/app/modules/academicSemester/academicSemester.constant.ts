@@ -36,3 +36,11 @@ export const academiceSemesterTitleCodeMapper: { [key: string]: string } = {
   Summer: '02',
   Fall: '03',
 }
+export const academicSemeterSearchField = ['code', 'title', 'year']
+
+export const academicSemesterFilterableField = [
+  'searchTerm',
+  'title',
+  'code',
+  'year',
+]
