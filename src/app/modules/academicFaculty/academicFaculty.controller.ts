@@ -1,7 +1,11 @@
 import { Request, Response } from 'express'
 import httpStatus from 'http-status'
+import { paginationField } from '../../../constants/paginationField'
 import { catchAsync } from '../../../shared/catchAsync'
+import pick from '../../../shared/pick'
 import sendResponse from '../../../shared/sendResponse'
+import { academicFacultyFilterableFields } from './academicFaculty.constants'
+import { IAcademicFaculty } from './academicFaculty.interface'
 import { AcademicFacultyService } from './academicFaculty.service'
 
 const createFaculty = catchAsync(async (req: Request, res: Response) => {
@@ -18,12 +22,20 @@ const createFaculty = catchAsync(async (req: Request, res: Response) => {
 })
 
 const getAllFaculty = catchAsync(async (req: Request, res: Response) => {
-  const result = await AcademicFacultyService.getAllFacultyService()
-  sendResponse(res, {
+  const filters = pick(req.query, academicFacultyFilterableFields)
+  const paginationOptions = pick(req.query, paginationField)
+
+  const result = await AcademicFacultyService.getAllFacultyService(
+    filters,
+    paginationOptions
+  )
+
+  sendResponse<IAcademicFaculty[]>(res, {
     statusCode: httpStatus.OK,
     success: true,
-    message: 'Academic Faculty is retrieved successfully!',
-    data: result,
+    message: 'Academic Faculties retrieved successfully',
+    meta: result.meta,
+    data: result.data,
   })
 })
 
