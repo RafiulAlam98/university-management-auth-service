@@ -28,9 +28,15 @@ const updateSingleFacultyService = async (
   return result
 }
 
+const deleteSingleFacultyService = async (id: string) => {
+  const result = await AcademicFaculty.findByIdAndDelete(id)
+  return result
+}
+
 export const AcademicFacultyService = {
   createFacultyService,
   getAllFacultyService,
   getSingleFacultyService,
   updateSingleFacultyService,
+  deleteSingleFacultyService,
 }

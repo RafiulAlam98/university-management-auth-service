@@ -53,9 +53,22 @@ const updateSingleFaculty = catchAsync(async (req: Request, res: Response) => {
   })
 })
 
+const deleteSingleFaculty = catchAsync(async (req: Request, res: Response) => {
+  const id = req.params.id
+
+  const result = await AcademicFacultyService.deleteSingleFacultyService(id)
+  sendResponse(res, {
+    statusCode: httpStatus.OK,
+    success: true,
+    message: 'Academic Faculty deleted successfully!',
+    data: result,
+  })
+})
+
 export const AcademicFacultyRoutes = {
   createFaculty,
   getAllFaculty,
   getSingleFaculty,
   updateSingleFaculty,
+  deleteSingleFaculty,
 }
