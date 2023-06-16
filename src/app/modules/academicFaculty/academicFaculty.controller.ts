@@ -27,7 +27,35 @@ const getAllFaculty = catchAsync(async (req: Request, res: Response) => {
   })
 })
 
+const getSingleFaculty = catchAsync(async (req: Request, res: Response) => {
+  const id = req.params.id
+  const result = await AcademicFacultyService.getSingleFacultyService(id)
+  sendResponse(res, {
+    statusCode: httpStatus.OK,
+    success: true,
+    message: 'Academic Faculty is retrieved successfully!',
+    data: result,
+  })
+})
+
+const updateSingleFaculty = catchAsync(async (req: Request, res: Response) => {
+  const id = req.params.id
+  const data = req.body
+  const result = await AcademicFacultyService.updateSingleFacultyService(
+    id,
+    data
+  )
+  sendResponse(res, {
+    statusCode: httpStatus.OK,
+    success: true,
+    message: 'Academic Faculty is updated successfully!',
+    data: result,
+  })
+})
+
 export const AcademicFacultyRoutes = {
   createFaculty,
   getAllFaculty,
+  getSingleFaculty,
+  updateSingleFaculty,
 }

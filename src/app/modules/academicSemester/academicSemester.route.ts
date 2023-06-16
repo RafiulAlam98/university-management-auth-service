@@ -13,6 +13,7 @@ router.post(
   AcademicSemesterController.createSemester
 )
 router.get('/:id', AcademicSemesterController.getSingleSemester)
+
 router.patch(
   '/:id',
   RequestValidation.ValidateRequest(
@@ -20,6 +21,7 @@ router.patch(
   ),
   AcademicSemesterController.updateSingleSemester
 )
+
 router.delete('/:id', AcademicSemesterController.deleteSingleSemester)
 router.get('/', AcademicSemesterController.getAllSemesters)
 
