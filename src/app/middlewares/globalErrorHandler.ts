@@ -1,16 +1,18 @@
 /* eslint-disable no-unused-expressions */
 /* eslint-disable no-console */
-import { ErrorRequestHandler } from 'express'
+
+import { ErrorRequestHandler, NextFunction, Request, Response } from 'express'
+
+import ApiError from '../errors/ApiError'
+import { IGenericErrorMessage } from '../../interfaces/error'
 import { ZodError } from 'zod'
 import config from '../../config'
-import { IGenericErrorMessage } from '../../interfaces/error'
 import { errorlogger } from '../../shared/logger'
-import ApiError from '../errors/ApiError'
 import handleCastError from '../errors/handleCastError'
 import { handleValidationError } from '../errors/handleValidationError'
 import { handleZodError } from '../errors/handleZodError'
 
-export const globalErrorHandler: ErrorRequestHandler = (err, req, res) => {
+export const globalErrorHandler: ErrorRequestHandler = (err, req:Request, res:Response, next:NextFunction) => {
   let statusCode = 500
   let message = 'Something went wrong !'
   let errorMessages: IGenericErrorMessage[] = []

@@ -1,0 +1,15 @@
+{
+    "keep": {
+        "days": true,
+        "amount": 14
+    },
+    "auditLog": "F:\\phero 2.0\\university-management\\logs\\winston\\successes\\.3d21d7a54f050466d9409a471153e4da9aaf4c1e-audit.json",
+    "files": [
+        {
+            "date": 1688490595897,
+            "name": "F:\\phero 2.0\\university-management\\logs\\winston\\successes\\phu-2023-04-07-23-success.log",
+            "hash": "7dcde405d7d81172062ea71af4c67f738884c1a695e99048c08ca700fd0a20a8"
+        }
+    ],
+    "hashType": "sha256"
+}

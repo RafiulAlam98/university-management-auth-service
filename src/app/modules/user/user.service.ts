@@ -1,13 +1,13 @@
+import { AcademicSemeter } from '../academicSemester/academicSemester.model'
+import ApiError from '../../errors/ApiError'
+import { IStudent } from '../student/student.interface'
+import { IUser } from './user.interface'
+import { Student } from '../student/student.model'
+import { User } from './user.model'
+import config from '../../../config'
+import { generateStudentId } from './user.utils'
 import httpStatus from 'http-status'
 import mongoose from 'mongoose'
-import config from '../../../config'
-import ApiError from '../../errors/ApiError'
-import { AcademicSemeter } from '../academicSemester/academicSemester.model'
-import { IStudent } from '../student/student.interface'
-import { Student } from '../student/student.model'
-import { IUser } from './user.interface'
-import { User } from './user.model'
-import { generateStudentId } from './user.utils'
 
 const createStudentService = async (
   user: IUser,
@@ -32,19 +32,21 @@ const createStudentService = async (
     session.startTransaction()
     const id = await generateStudentId(academicSemester)
     user.id = id
-    student.id = id
+    student.id = id;
 
+    // create student
     const newStudent = await Student.create([student], { session })
     if (!newStudent.length) {
       throw new ApiError(httpStatus.BAD_REQUEST, 'Failed to create')
-
-      //set student --> id into user.student
+      
     }
+    console.log(newStudent)
+    //set student id to user.student
     user.student = newStudent[0]._id
     const newUser = await User.create([user], { session })
     if (!newUser.length) {
       throw new ApiError(httpStatus.BAD_REQUEST, 'Failed to create')
-    }
+     }
 
     newUserAllData = newUser[0]
     await session.commitTransaction()
