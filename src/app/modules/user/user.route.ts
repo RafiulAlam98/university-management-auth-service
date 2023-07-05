@@ -1,3 +1,4 @@
+import { FacultyValidation } from './../faculty/faculty.validations';
 import { RequestValidation } from '../../middlewares/validateRequest'
 import { StudentValidaion } from './user.validation'
 import { UserController } from './user.controller'
@@ -9,6 +10,11 @@ router.post(
   '/create-student',
   RequestValidation.ValidateRequest(StudentValidaion.createUserZodSchema),
   UserController.createStudent
+)
+router.post(
+  '/create-faculty',
+  RequestValidation.ValidateRequest(FacultyValidation.updateFacultyZodSchema),
+  UserController.createFaculty
 )
 router.post(
   '/users',
