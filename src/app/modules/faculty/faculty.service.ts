@@ -1,13 +1,15 @@
-import httpStatus from 'http-status'
+import { IFaculty, IFacultyFilters } from './faculty.interface'
 import mongoose, { SortOrder } from 'mongoose'
+
 import ApiError from '../../errors/ApiError'
-import { paginationHelper } from './../../../helpers/paginationHelpers'
+import { Faculty } from './faculty.model'
 import { IGenericResponse } from './../../../interfaces/common'
 import { IPaginationOptions } from './../../../interfaces/pagination'
 import { User } from './../user/user.model'
 import { facultySearchableFields } from './faculty.constant'
-import { IFaculty, IFacultyFilters } from './faculty.interface'
-import { Faculty } from './faculty.model'
+import httpStatus from 'http-status'
+import { paginationHelper } from './../../../helpers/paginationHelpers'
+
 const getAllFaculties = async (
   filters: IFacultyFilters,
   paginationOptions: IPaginationOptions
@@ -86,7 +88,7 @@ const updateFaculty = async (
 
   if (name && Object.keys(name).length > 0) {
     Object.keys(name).forEach(key => {
-      const nameKey = `name.${key}` as keyof Partial<IFaculty>
+      const nameKey = `name.${key}` as unknown as keyof Partial<IFaculty>
       ;(updatedFacultyData as any)[nameKey] = name[key as keyof typeof name]
     })
   }

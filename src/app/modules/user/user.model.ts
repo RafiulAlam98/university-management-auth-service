@@ -1,5 +1,5 @@
-import { Schema, model } from 'mongoose'
 import { IUser, UserModel } from './user.interface'
+import { Schema, model } from 'mongoose'
 
 const userSchema = new Schema<IUser>(
   {
@@ -24,10 +24,10 @@ const userSchema = new Schema<IUser>(
       type: Schema.Types.ObjectId,
       ref: 'Faculty',
     },
-    // Admin: {
-    //   type: Schema.Types.ObjectId,
-    //   ref: 'Admin',
-    // },
+    admin: {
+      type: Schema.Types.ObjectId,
+      ref: 'Admin',
+    },
   },
   {
     timestamps: true,

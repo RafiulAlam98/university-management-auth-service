@@ -1,3 +1,4 @@
+import { AdminValidation } from './../admin/admin.validation';
 import { FacultyValidation } from './../faculty/faculty.validations';
 import { RequestValidation } from '../../middlewares/validateRequest'
 import { StudentValidaion } from './user.validation'
@@ -17,9 +18,9 @@ router.post(
   UserController.createFaculty
 )
 router.post(
-  '/users',
-  RequestValidation.ValidateRequest(StudentValidaion.createUserZodSchema),
-  UserController.createStudent
+  '/create-admin',
+  RequestValidation.ValidateRequest(AdminValidation.updateAdmin),
+  UserController.createAdmin
 )
 
 export const UserRoutes = {
