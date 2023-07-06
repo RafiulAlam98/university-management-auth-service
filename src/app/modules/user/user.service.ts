@@ -1,18 +1,18 @@
-import { generateAdminId, generateFacultyId, generateStudentId } from './user.utils'
+import { generateAdminId, generateFacultyId, generateStudentId } from './user.utils';
 
-import { AcademicSemeter } from '../academicSemester/academicSemester.model'
+import { AcademicSemeter } from '../academicSemester/academicSemester.model';
 import { Admin } from './../admin/admin.model';
-import ApiError from '../../errors/ApiError'
+import ApiError from '../../errors/ApiError';
 import { Faculty } from './../faculty/faculty.model';
 import { IAdmin } from './../admin/admin.interface';
 import { IFaculty } from './../faculty/faculty.interface';
-import { IStudent } from '../student/student.interface'
-import { IUser } from './user.interface'
-import { Student } from '../student/student.model'
-import { User } from './user.model'
-import config from '../../../config'
-import httpStatus from 'http-status'
-import mongoose from 'mongoose'
+import { IStudent } from '../student/student.interface';
+import { IUser } from './user.interface';
+import { Student } from '../student/student.model';
+import { User } from './user.model';
+import config from '../../../config';
+import httpStatus from 'http-status';
+import mongoose from 'mongoose';
 
 const createStudentService = async (
   user: IUser,
@@ -24,6 +24,8 @@ const createStudentService = async (
   if (!user.password) {
     user.password = config.default_student_pass as string
   }
+
+  
 
   //set role
   user.role = 'student'

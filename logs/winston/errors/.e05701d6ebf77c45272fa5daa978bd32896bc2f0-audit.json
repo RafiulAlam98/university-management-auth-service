@@ -14,6 +14,21 @@
             "date": 1688551824683,
             "name": "F:\\phero 2.0\\university-management\\logs\\winston\\errors\\phu-2023-05-07-16-error.log",
             "hash": "f7dbda88138ed6b544a55438d8da9974284654ba185b3a01ea4e19500535bbc3"
+        },
+        {
+            "date": 1688630167909,
+            "name": "F:\\phero 2.0\\university-management\\logs\\winston\\errors\\phu-2023-06-07-13-error.log",
+            "hash": "8a3a99ede3fc38269f526c691f8ba030cf5bfd95c33041ff2bde69ae5b56170a"
+        },
+        {
+            "date": 1688630448642,
+            "name": "F:\\phero 2.0\\university-management\\logs\\winston\\errors\\phu-2023-06-07-14-error.log",
+            "hash": "e589b0e5f63cd723c570811d2f2dce3904ec8edbc3fc149d0d821be23e74a785"
+        },
+        {
+            "date": 1688634572247,
+            "name": "F:\\phero 2.0\\university-management\\logs\\winston\\errors\\phu-2023-06-07-15-error.log",
+            "hash": "b60252e6374afe5ac8034013269322fa21d41c54aa1945d101f7df7c2b5ac44c"
         }
     ],
     "hashType": "sha256"
