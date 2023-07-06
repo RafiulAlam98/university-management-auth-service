@@ -16,4 +16,4 @@ router.patch(
   AdminController.updateAdmin
 )
 
-export const AdminRoutes = router
+export const AdminRoutes = {router}

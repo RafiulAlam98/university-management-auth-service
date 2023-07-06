@@ -1,7 +1,7 @@
-import express from 'express'
-import { RequestValidation } from './../../middlewares/validateRequest'
 import { FacultyController } from './faculty.controller'
 import { FacultyValidation } from './faculty.validations'
+import { RequestValidation } from './../../middlewares/validateRequest'
+import express from 'express'
 
 const router = express.Router()
 
@@ -16,4 +16,4 @@ router.patch(
 
 router.delete('/:id', FacultyController.deleteFaculty)
 
-export const FacultyRoutes = router
+export const FacultyRoutes = {router}
