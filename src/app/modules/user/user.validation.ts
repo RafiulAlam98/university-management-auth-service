@@ -89,6 +89,7 @@ const createUserZodSchema = z.object({
     }),
   }),
 })
+
 export const StudentValidaion = {
   createUserZodSchema,
 }
