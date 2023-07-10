@@ -1,0 +1,20 @@
+{
+    "keep": {
+        "days": true,
+        "amount": 14
+    },
+    "auditLog": "D:\\projects\\phero-2.0\\project\\university-management\\logs\\winston\\errors\\.6cfdfccb19c5a3f02b6b42c091abfcc6b68a9878-audit.json",
+    "files": [
+        {
+            "date": 1689002427053,
+            "name": "D:\\projects\\phero-2.0\\project\\university-management\\logs\\winston\\errors\\phu-2023-10-07-21-error.log",
+            "hash": "de93d9bbe41ef9053c37ecf765a1594cd365265f7e0e18274ee8dd72f8414163"
+        },
+        {
+            "date": 1689005511442,
+            "name": "D:\\projects\\phero-2.0\\project\\university-management\\logs\\winston\\errors\\phu-2023-10-07-22-error.log",
+            "hash": "0bcd50307558c8eeb8a64f3aae57207413096c78ccc30fc9c1f838d059d36897"
+        }
+    ],
+    "hashType": "sha256"
+}
