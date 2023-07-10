@@ -1,0 +1,64 @@
+{
+  service: 'user-service',
+  level: 'error',
+  message: 'Failed to conncet The `uri` parameter to `openUri()` must be a string, got "undefined". Make sure the first parameter to `mongoose.connect()` or `mongoose.createConnection()` is a string.',
+  stack: 'MongooseError: The `uri` parameter to `openUri()` must be a string, got "undefined". Make sure the first parameter to `mongoose.connect()` or `mongoose.createConnection()` is a string.\n' +
+    '    at _createMongoClient (D:\\projects\\phero-2.0\\project\\university-management\\node_modules\\mongoose\\lib\\connection.js:805:11)\n' +
+    '    at NativeConnection.openUri (D:\\projects\\phero-2.0\\project\\university-management\\node_modules\\mongoose\\lib\\connection.js:742:29)\n' +
+    '    at Mongoose.connect (D:\\projects\\phero-2.0\\project\\university-management\\node_modules\\mongoose\\lib\\index.js:406:15)\n' +
+    '    at D:\\projects\\phero-2.0\\project\\university-management\\src\\server.ts:16:20\n' +
+    '    at Generator.next (<anonymous>)\n' +
+    '    at D:\\projects\\phero-2.0\\project\\university-management\\src\\server.ts:8:71\n' +
+    '    at new Promise (<anonymous>)\n' +
+    '    at __awaiter (D:\\projects\\phero-2.0\\project\\university-management\\src\\server.ts:4:12)\n' +
+    '    at main (D:\\projects\\phero-2.0\\project\\university-management\\src\\server.ts:25:12)\n' +
+    '    at Object.<anonymous> (D:\\projects\\phero-2.0\\project\\university-management\\src\\server.ts:37:1)',
+  label: 'HI',
+  timestamp: '2023-07-10T12:36:54.454Z'
+}
+{
+  service: 'user-service',
+  ok: 0,
+  code: 8000,
+  codeName: 'AtlasError',
+  connectionGeneration: 0,
+  level: 'error',
+  message: 'Failed to conncet bad auth : authentication failed',
+  stack: 'MongoServerError: bad auth : authentication failed\n' +
+    '    at Connection.onMessage (D:\\projects\\phero-2.0\\project\\university-management\\node_modules\\mongodb\\src\\cmap\\connection.ts:413:18)\n' +
+    '    at MessageStream.<anonymous> (D:\\projects\\phero-2.0\\project\\university-management\\node_modules\\mongodb\\src\\cmap\\connection.ts:243:56)\n' +
+    '    at MessageStream.emit (node:events:513:28)\n' +
+    '    at processIncomingData (D:\\projects\\phero-2.0\\project\\university-management\\node_modules\\mongodb\\src\\cmap\\message_stream.ts:187:12)\n' +
+    '    at MessageStream._write (D:\\projects\\phero-2.0\\project\\university-management\\node_modules\\mongodb\\src\\cmap\\message_stream.ts:68:5)\n' +
+    '    at writeOrBuffer (node:internal/streams/writable:392:12)\n' +
+    '    at _write (node:internal/streams/writable:333:10)\n' +
+    '    at MessageStream.Writable.write (node:internal/streams/writable:337:10)\n' +
+    '    at TLSSocket.ondata (node:internal/streams/readable:766:22)\n' +
+    '    at TLSSocket.emit (node:events:513:28)',
+  label: 'HI',
+  timestamp: '2023-07-10T12:37:48.163Z',
+  [Symbol(errorLabels)]: Set(2) { 'HandshakeError', 'ResetPool' }
+}
+{
+  service: 'user-service',
+  ok: 0,
+  code: 8000,
+  codeName: 'AtlasError',
+  connectionGeneration: 0,
+  level: 'error',
+  message: 'Failed to conncet bad auth : authentication failed',
+  stack: 'MongoServerError: bad auth : authentication failed\n' +
+    '    at Connection.onMessage (D:\\projects\\phero-2.0\\project\\university-management\\node_modules\\mongodb\\src\\cmap\\connection.ts:413:18)\n' +
+    '    at MessageStream.<anonymous> (D:\\projects\\phero-2.0\\project\\university-management\\node_modules\\mongodb\\src\\cmap\\connection.ts:243:56)\n' +
+    '    at MessageStream.emit (node:events:513:28)\n' +
+    '    at processIncomingData (D:\\projects\\phero-2.0\\project\\university-management\\node_modules\\mongodb\\src\\cmap\\message_stream.ts:187:12)\n' +
+    '    at MessageStream._write (D:\\projects\\phero-2.0\\project\\university-management\\node_modules\\mongodb\\src\\cmap\\message_stream.ts:68:5)\n' +
+    '    at writeOrBuffer (node:internal/streams/writable:392:12)\n' +
+    '    at _write (node:internal/streams/writable:333:10)\n' +
+    '    at MessageStream.Writable.write (node:internal/streams/writable:337:10)\n' +
+    '    at TLSSocket.ondata (node:internal/streams/readable:766:22)\n' +
+    '    at TLSSocket.emit (node:events:513:28)',
+  label: 'HI',
+  timestamp: '2023-07-10T12:38:56.808Z',
+  [Symbol(errorLabels)]: Set(2) { 'HandshakeError', 'ResetPool' }
+}

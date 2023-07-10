@@ -12,7 +12,12 @@ import handleCastError from '../errors/handleCastError'
 import { handleValidationError } from '../errors/handleValidationError'
 import { handleZodError } from '../errors/handleZodError'
 
-export const globalErrorHandler: ErrorRequestHandler = (err, req:Request, res:Response, next:NextFunction) => {
+export const globalErrorHandler: ErrorRequestHandler = (
+  err,
+  req: Request,
+  res: Response,
+  next: NextFunction
+) => {
   let statusCode = 500
   let message = 'Something went wrong !'
   let errorMessages: IGenericErrorMessage[] = []
