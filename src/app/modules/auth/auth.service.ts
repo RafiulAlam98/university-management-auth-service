@@ -1,4 +1,7 @@
 import httpStatus from 'http-status'
+import { Secret } from 'jsonwebtoken'
+import config from '../../../config'
+import { jwtHelpers } from '../../../helpers/jwtHelpers'
 import ApiError from '../../errors/ApiError'
 import { User } from '../user/user.model'
 import { IUSerLogin } from './auth.interface'
@@ -23,8 +26,25 @@ const loginUser = async (payload: IUSerLogin) => {
     throw new ApiError(httpStatus.UNAUTHORIZED, 'Password is incorrect')
   }
 
+  const { id: userId, role, needsPasswordChange } = isUserExists
+
   // create access token
-  return {}
+  const accessToken = jwtHelpers.createToken(
+    { userId, role },
+    config.jwt.secret as Secret,
+    config.jwt.secret_expire_in as string
+  )
+
+  const refreshToken = jwtHelpers.createToken(
+    { userId, role },
+    config.jwt.refresh_secret as Secret,
+    config.jwt.refresh_secret_expire_in as string
+  )
+  return {
+    accessToken,
+    refreshToken,
+    needsPasswordChange,
+  }
 }
 
 export const AuthValiadationService = {
