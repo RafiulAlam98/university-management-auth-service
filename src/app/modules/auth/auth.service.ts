@@ -4,9 +4,9 @@ import config from '../../../config'
 import { jwtHelpers } from '../../../helpers/jwtHelpers'
 import ApiError from '../../errors/ApiError'
 import { User } from '../user/user.model'
-import { IUSerLogin } from './auth.interface'
+import { IUSerLogin, IUserLoginResponse } from './auth.interface'
 
-const loginUser = async (payload: IUSerLogin) => {
+const loginUser = async (payload: IUSerLogin): Promise<IUserLoginResponse> => {
   const { id, password } = payload
 
   //using statics
@@ -40,6 +40,7 @@ const loginUser = async (payload: IUSerLogin) => {
     config.jwt.refresh_secret as Secret,
     config.jwt.refresh_secret_expire_in as string
   )
+  console.log(accessToken, refreshToken, needsPasswordChange)
   return {
     accessToken,
     refreshToken,
