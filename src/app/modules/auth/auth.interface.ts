@@ -5,6 +5,6 @@ export type IUSerLogin = {
 
 export type IUserLoginResponse = {
   accessToken: string
-  refreshToken: string
+  refreshToken?: string
   needsPasswordChange: boolean
 }
