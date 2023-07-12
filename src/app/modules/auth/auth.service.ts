@@ -6,17 +6,9 @@ import { IUSerLogin } from './auth.interface'
 const loginUser = async (payload: IUSerLogin) => {
   const { id, password } = payload
 
-  //check user exists
-  // const isUserExists = await User.findOne(
-  //   { id },
-  //   { id: 1, password: 1, needsPasswordChange: 1 }
-  // )
+  //using statics
 
-  //creating instance of user
-  const user = new User()
-
-  //access
-  const isUserExists = user.isUserExists(id)
+  const isUserExists = await User.isUserExists(id)
 
   if (!isUserExists) {
     throw new ApiError(httpStatus.NOT_FOUND, 'User does not found')
@@ -26,7 +18,7 @@ const loginUser = async (payload: IUSerLogin) => {
 
   if (
     isUserExists?.password &&
-    !user.isPasswordMatched(password, isUserExists?.password)
+    !(await User.isPasswordMatched(password, isUserExists?.password))
   ) {
     throw new ApiError(httpStatus.UNAUTHORIZED, 'Password is incorrect')
   }
