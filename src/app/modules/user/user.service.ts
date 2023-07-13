@@ -72,9 +72,9 @@ const createStudentService = async (
         {
           path: 'academicSemester',
         },
-        // {
-        //   path: 'academicDepartment',
-        // },
+        {
+          path: 'academicDepartment',
+        },
         {
           path: 'academicFaculty',
         },

@@ -1,12 +1,12 @@
+import express from 'express'
 import { AcademicDepartmentRoutes } from '../modules/academicDepartment/academicDepartment.routes'
-import { AdminRoutes } from '../modules/admin/admin.route'
-import { AuthValidationroutes } from './../modules/auth/auth.route';
 import { FacultyRoutes } from '../modules/academicFaculty/academicFaculty.routes'
-import { ManagementDepartmentRoutes } from '../modules/managementDepartment/managementDepartment.route'
 import { SemesterRoutes } from '../modules/academicSemester/academicSemester.route'
+import { AdminRoutes } from '../modules/admin/admin.route'
+import { ManagementDepartmentRoutes } from '../modules/managementDepartment/managementDepartment.route'
 import { StudentRoutes } from '../modules/student/student.route'
 import { UserRoutes } from '../modules/user/user.route'
-import express from 'express'
+import { AuthValidationroutes } from './../modules/auth/auth.route'
 
 const router = express.Router()
 
@@ -24,7 +24,7 @@ const moduleRoutes = [
     route: FacultyRoutes.router,
   },
   {
-    path: '/academic-departments',
+    path: '/academic-department',
     route: AcademicDepartmentRoutes.router,
   },
   {
