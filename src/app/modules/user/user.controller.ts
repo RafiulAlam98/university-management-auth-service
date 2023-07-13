@@ -6,17 +6,19 @@ import sendResponse from '../../../shared/sendResponse'
 import { IUser } from './user.interface'
 import { UserService } from './user.service'
 
-const createStudent: RequestHandler = catchAsync(async (req, res) => {
-  const { student, ...user } = req.body
-  const result = await UserService.createStudentService(user, student)
-  console.log(req.cookies, 'cookies')
-  sendResponse(res, {
-    statusCode: httpStatus.OK,
-    success: true,
-    message: 'Academic Semester is created successfully!',
-    data: result,
-  })
-})
+const createStudent: RequestHandler = catchAsync(
+  async (req: Request, res: Response) => {
+    const { student, ...user } = req.body
+    const result = await UserService.createStudentService(student, user)
+
+    sendResponse<IUser>(res, {
+      statusCode: httpStatus.OK,
+      success: true,
+      message: 'Student created successfully!',
+      data: result,
+    })
+  }
+)
 
 const createFaculty: RequestHandler = catchAsync(
   async (req: Request, res: Response) => {
@@ -26,7 +28,7 @@ const createFaculty: RequestHandler = catchAsync(
     sendResponse<IUser>(res, {
       statusCode: httpStatus.OK,
       success: true,
-      message: 'user created successfully!',
+      message: 'Faculty created successfully!',
       data: result,
     })
   }

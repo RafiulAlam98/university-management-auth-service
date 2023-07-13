@@ -6,7 +6,7 @@ import config from '../../../config'
 
 const UserSchema = new Schema<IUser, UserModel>(
   {
-    id: {
+    userId: {
       type: String,
       required: true,
       unique: true,
@@ -50,7 +50,7 @@ UserSchema.statics.isUserExists = async function (
   id: string
 ): Promise<Pick<
   IUser,
-  'id' | 'password' | 'needsPasswordChange' | 'role'
+  'userId' | 'password' | 'needsPasswordChange' | 'role'
 > | null> {
   return await User.findOne(
     { id },

@@ -5,7 +5,7 @@ import { IStudent } from '../student/student.interface'
 import { IAdmin } from './../admin/admin.interface'
 
 export type IUser = {
-  id: string
+  userId: string
   role: string
   password: string
   needsPasswordChange: true | false
@@ -26,7 +26,9 @@ export type IUser = {
 export type UserModel = {
   isUserExists(
     id: string
-  ): Promise<Pick<IUser, 'id' | 'password' | 'needsPasswordChange' | 'role'>>
+  ): Promise<
+    Pick<IUser, 'userId' | 'password' | 'needsPasswordChange' | 'role'>
+  >
 
   isPasswordMatched(
     givenPassword: string,

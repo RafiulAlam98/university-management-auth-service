@@ -1,18 +1,22 @@
-import { generateAdminId, generateFacultyId, generateStudentId } from './user.utils';
+import {
+  generateAdminId,
+  generateFacultyId,
+  generateStudentId,
+} from './user.utils'
 
-import { AcademicSemeter } from '../academicSemester/academicSemester.model';
-import { Admin } from './../admin/admin.model';
-import ApiError from '../../errors/ApiError';
-import { Faculty } from './../faculty/faculty.model';
-import { IAdmin } from './../admin/admin.interface';
-import { IFaculty } from './../faculty/faculty.interface';
-import { IStudent } from '../student/student.interface';
-import { IUser } from './user.interface';
-import { Student } from '../student/student.model';
-import { User } from './user.model';
-import config from '../../../config';
-import httpStatus from 'http-status';
-import mongoose from 'mongoose';
+import httpStatus from 'http-status'
+import mongoose from 'mongoose'
+import config from '../../../config'
+import ApiError from '../../errors/ApiError'
+import { AcademicSemeter } from '../academicSemester/academicSemester.model'
+import { IStudent } from '../student/student.interface'
+import { Student } from '../student/student.model'
+import { IAdmin } from './../admin/admin.interface'
+import { Admin } from './../admin/admin.model'
+import { IFaculty } from './../faculty/faculty.interface'
+import { Faculty } from './../faculty/faculty.model'
+import { IUser } from './user.interface'
+import { User } from './user.model'
 
 const createStudentService = async (
   user: IUser,
@@ -25,35 +29,33 @@ const createStudentService = async (
     user.password = config.default_student_pass as string
   }
 
-  
-
   //set role
   user.role = 'student'
   const academicSemester = await AcademicSemeter.findById(
     student.academicSemester
-  )
+  ).lean()
 
-  let newUserAllData
+  let newUserAllData = null
   const session = await mongoose.startSession()
   try {
     session.startTransaction()
     const id = await generateStudentId(academicSemester)
-    user.id = id
-    student.id = id;
+    //set custom id for both student and user
+    user.userId = id
+    student.id = id
 
     // create student
     const newStudent = await Student.create([student], { session })
     if (!newStudent.length) {
       throw new ApiError(httpStatus.BAD_REQUEST, 'Failed to create')
-      
     }
-    console.log(newStudent)
+
     //set student id to user.student
     user.student = newStudent[0]._id
     const newUser = await User.create([user], { session })
     if (!newUser.length) {
       throw new ApiError(httpStatus.BAD_REQUEST, 'Failed to create')
-     }
+    }
 
     newUserAllData = newUser[0]
     await session.commitTransaction()
@@ -100,7 +102,7 @@ const createFaculty = async (
     session.startTransaction()
 
     const id = await generateFacultyId()
-    user.id = id
+    user.userId = id
     faculty.id = id
 
     const newFaculty = await Faculty.create([faculty], { session })
@@ -161,7 +163,7 @@ const createAdmin = async (
     session.startTransaction()
 
     const id = await generateAdminId()
-    user.id = id
+    user.userId = id
     admin.id = id
 
     const newAdmin = await Admin.create([admin], { session })
@@ -200,7 +202,6 @@ const createAdmin = async (
 
   return newUserAllData
 }
-
 
 export const UserService = {
   createStudentService,

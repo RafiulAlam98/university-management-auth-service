@@ -4,7 +4,11 @@ import config from '../../../config'
 import { jwtHelpers } from '../../../helpers/jwtHelpers'
 import ApiError from '../../errors/ApiError'
 import { User } from '../user/user.model'
-import { IUSerLogin, IUserLoginResponse } from './auth.interface'
+import {
+  IRefreshTokenResponse,
+  IUSerLogin,
+  IUserLoginResponse,
+} from './auth.interface'
 
 const loginUser = async (payload: IUSerLogin): Promise<IUserLoginResponse> => {
   const { id, password } = payload
@@ -40,7 +44,6 @@ const loginUser = async (payload: IUSerLogin): Promise<IUserLoginResponse> => {
     config.jwt.refresh_secret as Secret,
     config.jwt.refresh_secret_expire_in as string
   )
-  console.log(accessToken, refreshToken, needsPasswordChange)
   return {
     accessToken,
     refreshToken,
@@ -48,6 +51,43 @@ const loginUser = async (payload: IUSerLogin): Promise<IUserLoginResponse> => {
   }
 }
 
+const refreshTokenService = async (
+  token: string
+): Promise<IRefreshTokenResponse> => {
+  //verify token
+  // invalid token - synchronous
+  let verifiedToken = null
+  try {
+    verifiedToken = jwtHelpers.verifyToken(
+      token,
+      config.jwt.refresh_secret as Secret
+    )
+  } catch (error) {
+    throw new ApiError(httpStatus.FORBIDDEN, 'Invalid Refresh Token')
+  }
+
+  //checking deleted user refresh token
+  const { id } = verifiedToken
+  const isUserExists = await User.isUserExists(id)
+  if (!isUserExists) {
+    throw new ApiError(httpStatus.NOT_FOUND, 'User does not exist')
+  }
+
+  //generate new token
+  const newAccessToken = jwtHelpers.createToken(
+    {
+      id: isUserExists.id,
+      role: isUserExists.role,
+    },
+    config.jwt.secret as Secret,
+    config.jwt.secret_expire_in as string
+  )
+  return {
+    accessToken: newAccessToken,
+  }
+}
+
 export const AuthValiadationService = {
   loginUser,
+  refreshTokenService,
 }
