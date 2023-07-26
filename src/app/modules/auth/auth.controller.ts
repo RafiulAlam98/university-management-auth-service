@@ -31,7 +31,7 @@ const loginUser = catchAsync(async (req: Request, res: Response) => {
 const refreshTokenController = catchAsync(
   async (req: Request, res: Response) => {
     const { refreshToken } = req.cookies
-    console.log(refreshToken, 'refreshToken')
+
     const result = await AuthValiadationService.refreshTokenService(
       refreshToken
     )
