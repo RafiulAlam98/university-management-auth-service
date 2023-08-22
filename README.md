@@ -16,6 +16,7 @@
   - [Authentication & Authorization](#authentication--authorization)
   - [Error Handling](#error-handling)
   - [Database Integration](#database-integration)
+- [Technology Stack](#technology-stack)
 - [API Endpoints](#api-endpoints)
 
 ## Description
@@ -64,6 +65,20 @@ Before getting started, ensure you have the following:
 - Node.js (version x.x.x)
 - MongoDB (or another supported database)
 - npm (Node Package Manager)
+
+
+## Technology Stack
+
+The University Management Backend is built using the following technologies:
+
+- **Node.js**: JavaScript runtime environment for server-side development.
+- **Express.js**: Web application framework for building APIs and handling routes.
+- **MongoDB**: NoSQL database for storing university data.
+- **Mongoose**: Object Data Modeling (ODM) library for MongoDB integration.
+- **JSON Web Tokens (JWT)**: For authentication and authorization.
+- **Bcrypt**: Library for hashing passwords.
+- **dotenv**: For managing environment variables.
+- **... (add any other technologies you're using)**
 
 
 ## API Endpoints
