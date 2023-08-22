@@ -1,7 +1,7 @@
 # University Management Backend
 
-Live URL: https://university-management-mu.vercel.app/api/v1
-GitHub Repository: https://github.com/RafiulAlam98/university-management
+### Live URL: https://university-management-mu.vercel.app/api/v1
+### GitHub Repository: https://github.com/RafiulAlam98/university-management
 
 ## Table of Contents
 
