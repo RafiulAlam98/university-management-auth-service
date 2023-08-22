@@ -28,7 +28,7 @@ const createSemesterService = async (
 //get all semesters
 const getAllSemestersService = async (
   paginationOptions: IPaginationOptions,
-  filters: IAcademicSemesterFilter
+  filters: Partial<IAcademicSemesterFilter>
 ): Promise<IGenericResponse<IAcademicSemester[]>> => {
   const andConditions = []
   const { searchTerm, ...filtersData } = filters
