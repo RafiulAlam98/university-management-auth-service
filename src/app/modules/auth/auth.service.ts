@@ -16,6 +16,7 @@ const loginUser = async (payload: IUSerLogin): Promise<IUserLoginResponse> => {
   //using statics
 
   const isUserExists = await User.isUserExists(id)
+  console.log(isUserExists.role)
 
   if (!isUserExists) {
     throw new ApiError(httpStatus.NOT_FOUND, 'User does not found')
